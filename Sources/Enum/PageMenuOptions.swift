@@ -75,6 +75,8 @@ public enum PageMenuLayout {
 public protocol PageMenuOptions {
 
     var isInfinite: Bool { get }
+    
+    var scrollEnabled: Bool { get }
 
     var menuTitleFont: UIFont  { get }
 
@@ -119,6 +121,10 @@ extension PageMenuOptions {
 }
 
 public struct DefaultPageMenuOption: PageMenuOptions {
+    
+    public var scrollEnabled: Bool {
+        return true
+    }
 
     public var menuItemSize: PageMenuItemSize {
        return .sizeToFit(minWidth: 80, height: 30)

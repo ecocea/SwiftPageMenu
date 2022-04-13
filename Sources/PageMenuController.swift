@@ -44,6 +44,9 @@ open class PageMenuController: UIViewController {
         vc.dataSource = self
         vc.delegate = self
         vc.scrollView.backgroundColor = .clear
+        vc.scrollView.isPagingEnabled = options.scrollEnabled
+        vc.scrollView.isScrollEnabled = options.scrollEnabled
+      
         if #available(iOS 11.0, *) {
             vc.scrollView.contentInsetAdjustmentBehavior = .never
         } else {
@@ -165,7 +168,7 @@ open class PageMenuController: UIViewController {
      - parameter direction: The direction of the navigation and animation
      - parameter animated: A Boolean whether or not to animate the transition
      */
-    fileprivate func displayController(with index: Int, direction: EMPageViewControllerNavigationDirection, animated: Bool) {
+    public func displayController(with index: Int, direction: EMPageViewControllerNavigationDirection, animated: Bool) {
         if self.pageViewController.scrolling {
             return
         }

@@ -102,7 +102,7 @@ import UIKit
 /**
  The navigation scroll direction.
  */
-@objc enum EMPageViewControllerNavigationDirection : Int {
+@objc public enum EMPageViewControllerNavigationDirection : Int {
     /// Forward direction. Can be right in a horizontal orientation or down in a vertical orientation.
     case forward
     /// Reverse direction. Can be left in a horizontal orientation or up in a vertical orientation.
@@ -112,7 +112,7 @@ import UIKit
 /**
  The navigation scroll orientation.
  */
-@objc enum EMPageViewControllerNavigationOrientation: Int {
+ @objc public enum EMPageViewControllerNavigationOrientation: Int {
     /// Horiziontal orientation. Scrolls left and right.
     case horizontal
     /// Vertical orientation. Scrolls up and down.
@@ -143,8 +143,7 @@ class EMPageViewController: UIViewController, UIScrollViewDelegate {
     /// - important: Properties should be set with caution to prevent unexpected behavior.
     open private(set) lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-
-        scrollView.isPagingEnabled = true
+        
         scrollView.scrollsToTop = false
         scrollView.autoresizingMask = [.flexibleTopMargin, .flexibleRightMargin, .flexibleBottomMargin, .flexibleLeftMargin]
         scrollView.bounces = true
