@@ -6,7 +6,7 @@
 //  Copyright © 29 Heisei Tamanyan. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 @objc public enum PageMenuNavigationDirection: Int {
 
